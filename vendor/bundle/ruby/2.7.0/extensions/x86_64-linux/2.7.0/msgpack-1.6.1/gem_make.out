@@ -1,0 +1,33 @@
+current directory: /home/susan/Development/code/phase-4/Project/Almaid/vendor/bundle/ruby/2.7.0/gems/msgpack-1.6.1/ext/msgpack
+/usr/share/rvm/rubies/ruby-2.7.4/bin/ruby -I /usr/share/rvm/rubies/ruby-2.7.4/lib/ruby/site_ruby/2.7.0 extconf.rb
+checking for ruby/st.h... yes
+checking for st.h... yes
+checking for rb_enc_interned_str() in ruby.h... no
+checking for rb_hash_new_capa() in ruby.h... no
+creating Makefile
+
+current directory: /home/susan/Development/code/phase-4/Project/Almaid/vendor/bundle/ruby/2.7.0/gems/msgpack-1.6.1/ext/msgpack
+make DESTDIR\= sitearchdir\=./.gem.20230325-171096-zoxrpe sitelibdir\=./.gem.20230325-171096-zoxrpe clean
+
+current directory: /home/susan/Development/code/phase-4/Project/Almaid/vendor/bundle/ruby/2.7.0/gems/msgpack-1.6.1/ext/msgpack
+make DESTDIR\= sitearchdir\=./.gem.20230325-171096-zoxrpe sitelibdir\=./.gem.20230325-171096-zoxrpe
+compiling buffer.c
+compiling buffer_class.c
+compiling extension_value_class.c
+compiling factory_class.c
+compiling packer.c
+compiling packer_class.c
+compiling packer_ext_registry.c
+compiling rbinit.c
+compiling rmem.c
+compiling unpacker.c
+compiling unpacker_class.c
+compiling unpacker_ext_registry.c
+linking shared-object msgpack/msgpack.so
+
+current directory: /home/susan/Development/code/phase-4/Project/Almaid/vendor/bundle/ruby/2.7.0/gems/msgpack-1.6.1/ext/msgpack
+make DESTDIR\= sitearchdir\=./.gem.20230325-171096-zoxrpe sitelibdir\=./.gem.20230325-171096-zoxrpe install
+/bin/install -m 0755 msgpack.so ./.gem.20230325-171096-zoxrpe/msgpack
+
+current directory: /home/susan/Development/code/phase-4/Project/Almaid/vendor/bundle/ruby/2.7.0/gems/msgpack-1.6.1/ext/msgpack
+make DESTDIR\= sitearchdir\=./.gem.20230325-171096-zoxrpe sitelibdir\=./.gem.20230325-171096-zoxrpe clean

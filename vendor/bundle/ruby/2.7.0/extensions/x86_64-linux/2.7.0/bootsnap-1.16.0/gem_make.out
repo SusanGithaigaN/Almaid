@@ -1,0 +1,18 @@
+current directory: /home/susan/Development/code/phase-4/Project/Almaid/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.16.0/ext/bootsnap
+/usr/share/rvm/rubies/ruby-2.7.4/bin/ruby -I /usr/share/rvm/rubies/ruby-2.7.4/lib/ruby/site_ruby/2.7.0 extconf.rb
+creating Makefile
+
+current directory: /home/susan/Development/code/phase-4/Project/Almaid/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230325-171096-xdwumy sitelibdir\=./.gem.20230325-171096-xdwumy clean
+
+current directory: /home/susan/Development/code/phase-4/Project/Almaid/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230325-171096-xdwumy sitelibdir\=./.gem.20230325-171096-xdwumy
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: /home/susan/Development/code/phase-4/Project/Almaid/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230325-171096-xdwumy sitelibdir\=./.gem.20230325-171096-xdwumy install
+/bin/install -m 0755 bootsnap.so ./.gem.20230325-171096-xdwumy/bootsnap
+
+current directory: /home/susan/Development/code/phase-4/Project/Almaid/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230325-171096-xdwumy sitelibdir\=./.gem.20230325-171096-xdwumy clean

@@ -1,0 +1,19 @@
+current directory: /home/susan/Development/code/phase-4/Project/Almaid/vendor/bundle/ruby/2.7.0/gems/debug-1.7.1/ext/debug
+/usr/share/rvm/rubies/ruby-2.7.4/bin/ruby -I /usr/share/rvm/rubies/ruby-2.7.4/lib/ruby/site_ruby/2.7.0 extconf.rb
+creating Makefile
+
+current directory: /home/susan/Development/code/phase-4/Project/Almaid/vendor/bundle/ruby/2.7.0/gems/debug-1.7.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230325-171096-1acwwkv sitelibdir\=./.gem.20230325-171096-1acwwkv clean
+
+current directory: /home/susan/Development/code/phase-4/Project/Almaid/vendor/bundle/ruby/2.7.0/gems/debug-1.7.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230325-171096-1acwwkv sitelibdir\=./.gem.20230325-171096-1acwwkv
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/susan/Development/code/phase-4/Project/Almaid/vendor/bundle/ruby/2.7.0/gems/debug-1.7.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230325-171096-1acwwkv sitelibdir\=./.gem.20230325-171096-1acwwkv install
+/bin/install -m 0755 debug.so ./.gem.20230325-171096-1acwwkv/debug
+
+current directory: /home/susan/Development/code/phase-4/Project/Almaid/vendor/bundle/ruby/2.7.0/gems/debug-1.7.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20230325-171096-1acwwkv sitelibdir\=./.gem.20230325-171096-1acwwkv clean

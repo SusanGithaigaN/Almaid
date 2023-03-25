@@ -1,0 +1,33 @@
+current directory: /home/susan/Development/code/phase-4/Project/Almaid/vendor/bundle/ruby/2.7.0/gems/executable-hooks-1.6.1/ext/wrapper_installer
+/usr/share/rvm/rubies/ruby-2.7.4/bin/ruby -I /usr/share/rvm/rubies/ruby-2.7.4/lib/ruby/site_ruby/2.7.0 extconf.rb
+bootsnap 1.16.0
+bundler 2.4.6
+debug 1.7.1
+irb 1.6.3
+irb 1.2.6
+nokogiri 1.14.2
+puma 5.6.5
+racc 1.6.2
+racc 1.4.16
+rack 2.2.6.4
+railties 7.0.4.3
+rake 13.0.6
+rdoc 6.2.1.1
+sprockets 4.2.0
+thor 1.2.1
+
+current directory: /home/susan/Development/code/phase-4/Project/Almaid/vendor/bundle/ruby/2.7.0/gems/executable-hooks-1.6.1/ext/wrapper_installer
+make DESTDIR\= sitearchdir\=./.gem.20230325-175276-jarwff sitelibdir\=./.gem.20230325-175276-jarwff clean
+make: *** No rule to make target 'clean'.  Stop.
+
+current directory: /home/susan/Development/code/phase-4/Project/Almaid/vendor/bundle/ruby/2.7.0/gems/executable-hooks-1.6.1/ext/wrapper_installer
+make DESTDIR\= sitearchdir\=./.gem.20230325-175276-jarwff sitelibdir\=./.gem.20230325-175276-jarwff
+make: Nothing to be done for 'all'.
+
+current directory: /home/susan/Development/code/phase-4/Project/Almaid/vendor/bundle/ruby/2.7.0/gems/executable-hooks-1.6.1/ext/wrapper_installer
+make DESTDIR\= sitearchdir\=./.gem.20230325-175276-jarwff sitelibdir\=./.gem.20230325-175276-jarwff install
+make: Nothing to be done for 'install'.
+
+current directory: /home/susan/Development/code/phase-4/Project/Almaid/vendor/bundle/ruby/2.7.0/gems/executable-hooks-1.6.1/ext/wrapper_installer
+make DESTDIR\= sitearchdir\=./.gem.20230325-175276-jarwff sitelibdir\=./.gem.20230325-175276-jarwff clean
+make: *** No rule to make target 'clean'.  Stop.
