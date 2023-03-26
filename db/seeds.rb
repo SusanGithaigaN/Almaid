@@ -9,9 +9,9 @@
 
 # User.create(name: , email: , tel_no: , password:"wqfW127")
 puts "🌱 Seeding users"
-User.create(name: Faker::Name.name_with_middle, email: Faker::Internet.email, tel_no: Faker::Number.leading_zero_number, password:"wqfW127")
-User.create(name: Faker::Name.name_with_middle, email: Faker::Internet.email, tel_no: Faker::Number.leading_zero_number, password:"KW6271ns")
-User.create(name: Faker::Name.name_with_middle, email: Faker::Internet.email, tel_no: Faker::Number.leading_zero_number, password:"GH%dsb3")
+User.create(name: "Raquel Shaw", email: "raquelshaw@gmail.com", tel_no: Faker::Number.leading_zero_number, username: "Raquel_032", password:"wqfW127")
+User.create(name: "Owen Sims", email: "owen023@gmail.com", tel_no: Faker::Number.leading_zero_number, username: "Owen", password:"KW6271ns")
+User.create(name: "Siya Dlamini", email: "siyad@gmail.com", tel_no: Faker::Number.leading_zero_number, username: "It's_Siya", password:"GH%dsb3")
 
 
 # Cleaner.create(name: , age: , phonenumber: , id_no: , experience: , image_url: )
