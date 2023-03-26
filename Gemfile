@@ -42,6 +42,7 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.18'
 gem 'executable-hooks', '~> 1.6', '>= 1.6.1'
 gem 'faker', '~> 3.1', '>= 3.1.1'
 
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
@@ -73,3 +74,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "active_model_serializers", "~> 0.10.13"
+
+gem "jwt", "~> 2.7"

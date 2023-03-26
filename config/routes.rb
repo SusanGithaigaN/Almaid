@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   # add cookies route
   get '/cookies', to: 'session#index'
 
@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # post '/users', to: 'users#create'
   resources :users, only: [:index, :create]
 
+  # show users
+  get '/profile', to: 'users#show'
   # login
   post '/login', to: 'session#create'
 

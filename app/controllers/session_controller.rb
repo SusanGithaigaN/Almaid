@@ -1,5 +1,6 @@
 class SessionController < ApplicationController
     protect_from_forgery with: :reset_session
+    
     def index
         # set cookie
         cookies[:hello_world] ||= "Hello Susan"
@@ -7,11 +8,10 @@ class SessionController < ApplicationController
         render json: {cookies: cookies.to_hash}
     end
 
-    
     # login session
     def create
         user = User.find_by(username: params[:username])
-        if user
+        if user &.authenticate(params[:password])
             session[:user_id] = user.id
             render json: user
         else
