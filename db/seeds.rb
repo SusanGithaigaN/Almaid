@@ -23,9 +23,9 @@ Cleaner.create(name: Faker::Name.name_with_middle, age: 32, phonenumber: Faker::
 
 # Review.create(user_id: , cleaner_id: , review: )
 puts "🌱 Seeding reviews"
-Review.create(user_id: 3, cleaner_id: 2, review: 4)
-Review.create(user_id: 2, cleaner_id: 1, review: 3)
-Review.create(user_id: 1, cleaner_id: 3, review: 5)
+Review.create(user_id: 3, cleaner_id: 2, review: "Very efficient")
+Review.create(user_id: 2, cleaner_id: 1, review: "EXtremely slow")
+Review.create(user_id: 1, cleaner_id: 3, review: "Fast")
 
 
 # Booking.create(user_id: , cleaner_id: , start_date: , end_date: , payment_status: )
