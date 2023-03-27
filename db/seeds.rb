@@ -34,4 +34,4 @@ Review.create(user_id: 1, cleaner_id: 3, review: "Fast")
 puts "🌱 Seeding bookings"
 Booking.create(user_id: 3, cleaner_id: 2, start_date: '2023-01-01', end_date: '2023-01-14', payment_status: "In progress")
 Booking.create(user_id: 2, cleaner_id: 1, start_date: '2023-02-01', end_date: '2023-02-21', payment_status: "Pending")
-Booking.create(user_id: 1, cleaner_id: 3, start_date: '2023-02-01', end_date: '2023-02-07', payment_status: "Complete")
+Booking.create(user_id: 1, cleaner_id: 3, start_date: '2023-02-01', end_date: '2023-02-08', payment_status: "Complete")

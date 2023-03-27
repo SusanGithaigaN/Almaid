@@ -4,7 +4,7 @@ class Cleaner < ApplicationRecord
 
     # validations
     # age
-    validates :age, presence: true, length: { minimum:20 }
-    validates :id_no, presence: true, length: { minimum:10 }
+    # validates :age, presence: true, length: { minimum:20 }
+    # validates :id_no, presence: true, length: { minimum:10 }
     
 end
