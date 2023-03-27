@@ -26,3 +26,12 @@ puts "🌱 Seeding reviews"
 Review.create(user_id: 3, cleaner_id: 2, review: 4)
 Review.create(user_id: 2, cleaner_id: 1, review: 3)
 Review.create(user_id: 1, cleaner_id: 3, review: 5)
+
+
+# Booking.create(user_id: , cleaner_id: , start_date: , end_date: , payment_status: )
+# https://stackoverflow.com/questions/5474164/rails-seeding-database-data-and-date-formats
+# date: YYYY-MM-DD
+puts "🌱 Seeding bookings"
+Booking.create(user_id: 3, cleaner_id: 2, start_date: '2023-01-01', end_date: '2023-01-14', payment_status: "In progress")
+Booking.create(user_id: 2, cleaner_id: 1, start_date: '2023-02-01', end_date: '2023-02-21', payment_status: "Pending")
+Booking.create(user_id: 1, cleaner_id: 3, start_date: '2023-02-01', end_date: '2023-02-07', payment_status: "Complete")
