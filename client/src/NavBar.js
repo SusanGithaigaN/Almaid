@@ -45,12 +45,12 @@ export default function NavBar() {
         <MDBCollapse navbar show={showBasic}>
           <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
             <MDBNavbarItem>
-              <MDBNavbarLink active aria-current='page' href='#' className='nav'>
+              <MDBNavbarLink active aria-current='page' href='/' className='nav'>
                 Home
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href='#' className='nav'>About Us</MDBNavbarLink>
+              <MDBNavbarLink href='about' className='nav'>About Us</MDBNavbarLink>
             </MDBNavbarItem>
 
             <MDBNavbarItem>
@@ -59,18 +59,30 @@ export default function NavBar() {
                   Our Staff
                 </MDBDropdownToggle>
                 <MDBDropdownMenu className='nav'>
-                  <MDBDropdownItem link  className='nav2'>Bookings</MDBDropdownItem>
-                  <MDBDropdownItem link  className='nav2'>Reviews</MDBDropdownItem>
+                {/* style={{color: "#00008B !important"}} */}
+                  <MDBDropdownItem link  className='login-text'>Bookings</MDBDropdownItem>
+                  <MDBDropdownItem link  className='login-text'>Reviews</MDBDropdownItem>
                   {/* <MDBDropdownItem link>Something else here</MDBDropdownItem> */}
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavbarItem>
 
-            {/* <MDBNavbarItem>
-              <MDBNavbarLink disabled href='#' tabIndex={-1} aria-disabled='true'>
-                Disabled
-              </MDBNavbarLink>
-            </MDBNavbarItem> */}
+            <MDBNavbarItem>
+            {/* <MDBNavItem> */}
+              <MDBDropdown>
+                <MDBDropdownToggle nav caret>
+                  <MDBIcon icon="user" id='login-icon' className='nav'/> 
+                </MDBDropdownToggle>
+                <MDBDropdownMenu className="dropdown-default">
+                <MDBDropdownItem><a href="/login" className='login-text'>Login</a></MDBDropdownItem>
+                <MDBDropdownItem><a href="/signup" className='login-text'>Sign Up</a></MDBDropdownItem>
+                  {/* <MDBDropdownItem href="#!"className='login-text'>Admin Login</MDBDropdownItem> */}
+                  {/* <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
+                  <MDBDropdownItem href="#!">Something else here</MDBDropdownItem> */}
+                </MDBDropdownMenu>
+              </MDBDropdown>
+            {/* </MDBNavItem> */}
+            </MDBNavbarItem>
           </MDBNavbarNav>
 {/* 
           <form className='d-flex input-group w-auto'>

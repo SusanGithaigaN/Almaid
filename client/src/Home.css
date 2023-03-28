@@ -1,3 +1,4 @@
+/* Home */
 .home{
     background-color: aliceblue;
     padding-left: 3em;
@@ -11,6 +12,7 @@
     font-weight: bold;
     color: #00008B !important;
     text-align: left;
+    padding-left: 4px;
 }
   .flex-container {
     display: flex;
@@ -22,12 +24,12 @@
   }
   
   .image1{
-    margin-left: 25em;
+    margin-left: 23em;
     margin-top: 13em;
     margin-right: 1em;
   }
   .image2 {
-    margin-left: 20em;
+    margin-left: 8em;
     margin-top: 13em;
   }
 .image1, .image2 {
@@ -42,6 +44,8 @@
     font-size: 16px !important;
     font-weight: bold !important;
 } 
+
+/* NavBar */
 .nav, .nav-link, .nav-main, .nav2{
     padding-left: 4em !important;
     padding-right: 4em !important;
@@ -55,11 +59,117 @@
     font-size: 35px !important;
     font-weight: bold;
 }
-.nav2{
+.nav2, .login-text{
     color: #00008B !important;
-    font-size: 24px;    
+    font-size: 20px;
+}
+#login-icon{
+  height: 57px !important;
+  background-color: transparent !important;
+  /* font-size: 14px !important; */
+}
+/* .login-text{
+  
+  color: #00008B;
+} */
+
+/* About */
+.details{
+  background-color: white;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 3em;
+  margin-right: 3em;
+  padding-bottom: 5em;
+}
+.details h1{
+  /* align-items: center; */
+  font-size: 48px;
+  font-weight: bold;
+  color: #00008B;
+  padding-bottom: 1em;
+  padding-top: 2em;
+}
+.details p{
+  font-size: 25px;
+  font-family: 'Times New Roman', Times, serif;
+  /* align-items: center; */
+}
+#abt{
+  /* background-position: fixed !important;
+  background-repeat: no-repeat;
+  background-size: cover; */
+  height: 220vh;
+  /* margin-top: 6em; */
+}
+.plantsy{
+  /* margin-top: 6em; */
+  float: left;
+  margin-left: 3em;
+}
+.planty{
+  margin-top: 3.8em;
+}
+.text{
+  padding-top: 4em;
+  /* float:right; */
+  margin-left: 45em;
+  /* background:lightgray; */
+  width:50%;
+  padding-right: 3em;
+  /* padding-left: 3em; */
+  height: 50vh;
+  /* height:280px; */
+}
+.text h1{
+  font-size: 48px;
+  font-weight: bold;
+  color: #00008B;
+  /* align-items: center; */
+  margin-left: 5em;
 }
 
+.text p{
+  font-size: 25px;
+  font-family: 'Times New Roman', Times, serif;
+  /* color: #00008B; */
+}
+.body1, .body3{
+  background-color: aliceblue;
+  padding-bottom: 5em;
+}
+.body2{
+  background-color: white;
+  padding-bottom: 5em;
+}
+/* about images */
+#parent-s{
+  height: 30em;
+}
+
+
+/* login  */
+ #login{
+  margin-top: 10em !important;
+  height: 70vh;
+}
+/* .testlog{
+  background-color: aliceblue;
+} */
+ /* signup * */
+.signup{
+margin-top: 6em !important;
+height: 100vh;
+}
+
+
+
+
+
+/* footer */
 #footer{
     background-color: white !important;
     padding-top: 3em;
