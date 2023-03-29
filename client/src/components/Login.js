@@ -1,5 +1,5 @@
 import './Home.css'
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import {
@@ -15,6 +15,8 @@ import {
 }
 from 'mdb-react-ui-kit';
 
+import LoggedUser from './contexts/LoggedUser';
+
 function Login() {
   const [formData, setFormData] = useState({
     username: '',
@@ -22,6 +24,9 @@ function Login() {
   });
 
   const navigate = useNavigate();
+  // get setUser function from context
+  const { setUser } = useContext(LoggedUser);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     fetch('/login', {
@@ -34,6 +39,8 @@ function Login() {
     .then((res) => res.json())
     .then((data) =>{
       console.log('Successfully Logged in', data);
+      // set user state
+      setUser(data.user);
       // redirect user to aboutus page if userlogin === success
       navigate('/about');
     })
