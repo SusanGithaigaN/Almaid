@@ -23,7 +23,7 @@ export default function NavBar() {
   return (
     <MDBNavbar expand='lg' light bgColor='light'>
       <MDBContainer fluid>
-        <MDBNavbarBrand href='#' className='nav-main'>
+        <MDBNavbarBrand href='/' className='nav-main'>
         <img
               src='https://bit.ly/3nnsND0'
               height='120'
