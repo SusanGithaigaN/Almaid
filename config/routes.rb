@@ -11,6 +11,22 @@ Rails.application.routes.draw do
 
   # show users
   get '/profile', to: 'users#show'
+
+  # get all cleaners
+  get '/cleaners', to: 'cleaners#index'
+
+  # get all reviews
+  get '/reviews', to: 'reviews#index'
+  # create reviews
+  # post '/reviews', to: 'reviews#create'
+  post '/cleaners/:cleaner_id/reviews', to: 'reviews#create'
+
+  # get all cleaners and associated reviews
+  get '/cleaners/summary', to: 'cleaners#summary'
+  
+  # book cleaner
+  post '/bookings', to: 'bookings#create'
+  
   # login
   post '/login', to: 'session#create'
 

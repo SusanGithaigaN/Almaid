@@ -22,10 +22,21 @@ Cleaner.create(name: Faker::Name.name_with_middle, age: 32, phonenumber: Faker::
 
 
 # Review.create(user_id: , cleaner_id: , review: )
-puts "🌱 Seeding reviews"
-Review.create(user_id: 3, cleaner_id: 2, review: "Very efficient")
-Review.create(user_id: 2, cleaner_id: 1, review: "EXtremely slow")
-Review.create(user_id: 1, cleaner_id: 3, review: "Fast")
+# puts "🌱 Seeding reviews"
+# Review.create(user_id: 3, cleaner_id: 2, review: "Very efficient")
+# Review.create(user_id: 2, cleaner_id: 1, review: "EXtremely slow")
+# Review.create(user_id: 1, cleaner_id: 3, review: "Fast")
+
+Review.create(rating: 4.5, review: "Very efficient")
+Review.create(rating: 2.0, review: "EXtremely slow")
+Review.create(rating: 4.7, review: "Fast")
+
+
+# CleanerReview.create(cleaner_id: 1, user_id: , teachable: )
+puts "🌱 Seeding Cleaner Reviews"
+CleanerReview.create(cleaner_id: 1, user_id: 1, review_id: 1, teachable: true)
+CleanerReview.create(cleaner_id: 2, user_id: 2, review_id: 2, teachable: false)
+CleanerReview.create(cleaner_id: 3, user_id: 3, review_id: 3, teachable: true)
 
 
 # Booking.create(user_id: , cleaner_id: , start_date: , end_date: , payment_status: )

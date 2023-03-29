@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_27_025145) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_29_024444) do
   create_table "bookings", force: :cascade do |t|
     t.integer "user_id"
     t.integer "cleaner_id"
@@ -19,6 +19,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_27_025145) do
     t.string "payment_status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "cleaner_reviews", force: :cascade do |t|
+    t.integer "cleaner_id"
+    t.integer "user_id"
+    t.boolean "teachable"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "review_id"
   end
 
   create_table "cleaners", force: :cascade do |t|
@@ -33,16 +42,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_27_025145) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "cleaner_id"
     t.string "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "rating"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.integer "tel_no"
+    t.string "tel_no"
     t.string "email"
     t.string "password_digest"
     t.datetime "created_at", null: false

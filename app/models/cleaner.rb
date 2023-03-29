@@ -1,6 +1,8 @@
 class Cleaner < ApplicationRecord
-    has_many :users
-    has_many :reviews, through: :users
+    has_many :reviews
+    has_many :users, through: :reviews
+
+    has_many :cleaner_reviews
 
     # validations
     # age
