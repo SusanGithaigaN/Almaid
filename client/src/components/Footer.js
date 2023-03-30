@@ -14,10 +14,10 @@ export default function Footer() {
           <a href='' className='me-4 text-reset'>
             <MDBIcon color='secondary' fab icon='facebook-f' />
           </a>
-          <a href='' className='me-4 text-reset'>
+          <a href='https://twitter.com/Su_Githaiga' className='me-4 text-reset'>
             <MDBIcon color='secondary' fab icon='twitter' />
           </a>
-          <a href='' className='me-4 text-reset'>
+          <a href='https://bit.ly/40s2OsM' className='me-4 text-reset'>
             <MDBIcon color='secondary' fab icon='google' />
           </a>
           <a href='' className='me-4 text-reset'>

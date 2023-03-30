@@ -11,13 +11,13 @@ export default function Home() {
         <div className='home'>
             <div className='flex-container'>
               <p className='para'>Sparkle<br />with<br />your<br />ideal<br />clean</p>
-              <div className='image-container'>
-                <img src={image1} alt='Image 1' className='image2'/>
-                <img src={image2} alt='Image 2' className='image1' />
+                <div className='image-container'>
+                <img src={image1} alt='Woman 1' className='image2'/>
+                <img src={image2} alt='Woman 2' className='image1' />
                 {/* <img src={Water} alt='Water' className='water' /> */}
               </div>
             </div>
-            <MDBBtn className='btn'>View more</MDBBtn>
+            <MDBBtn className='btn2' href='about'>View more</MDBBtn>
         </div>
     </div>
   );

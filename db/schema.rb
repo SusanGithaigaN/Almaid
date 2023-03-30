@@ -21,15 +21,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_29_024444) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "cleaner_reviews", force: :cascade do |t|
-    t.integer "cleaner_id"
-    t.integer "user_id"
-    t.boolean "teachable"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "review_id"
-  end
-
   create_table "cleaners", force: :cascade do |t|
     t.string "name"
     t.integer "age"
@@ -42,6 +33,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_29_024444) do
   end
 
   create_table "reviews", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "cleaner_id"
     t.string "review"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

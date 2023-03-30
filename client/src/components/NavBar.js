@@ -1,5 +1,9 @@
 import './Home.css'
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import LoggedUser from './contexts/LoggedUser';
+
 import {
   MDBContainer,
   MDBNavbar,
@@ -19,11 +23,12 @@ import {
 
 export default function NavBar() {
   const [showBasic, setShowBasic] = useState(false);
+  const {loggedUser} = useContext(LoggedUser);
 
   return (
     <MDBNavbar expand='lg' light bgColor='light'>
       <MDBContainer fluid>
-        <MDBNavbarBrand href='/' className='nav-main'>
+        <MDBNavbarBrand as={Link} to='/' className='nav-main'>
         <img
               src='https://bit.ly/3nnsND0'
               height='120'
@@ -54,17 +59,18 @@ export default function NavBar() {
             </MDBNavbarItem>
 
             <MDBNavbarItem>
-              <MDBDropdown>
-                <MDBDropdownToggle tag='a' className='nav-link' role='button' >
-                  Our Staff
-                </MDBDropdownToggle>
-                <MDBDropdownMenu className='nav'>
+              {/* <MDBDropdown>
+                <MDBDropdownToggle tag='a' className='nav-link' role='button' > */}
+                  
+                  <MDBNavbarLink href='staff' className='nav'>Our Staff</MDBNavbarLink>
+                {/* </MDBDropdownToggle> */}
+                {/* <MDBDropdownMenu className='nav'> */}
                 {/* style={{color: "#00008B !important"}} */}
-                  <MDBDropdownItem link  className='login-text'>Bookings</MDBDropdownItem>
-                  <MDBDropdownItem link  className='login-text'>Reviews</MDBDropdownItem>
+                  {/* <MDBDropdownItem link  className='login-text'>Bookings</MDBDropdownItem>
+                  <MDBDropdownItem link  className='login-text'>Reviews</MDBDropdownItem> */}
                   {/* <MDBDropdownItem link>Something else here</MDBDropdownItem> */}
-                </MDBDropdownMenu>
-              </MDBDropdown>
+                {/* </MDBDropdownMenu> */}
+              {/* </MDBDropdown> */}
             </MDBNavbarItem>
 
             <MDBNavbarItem>
@@ -74,8 +80,15 @@ export default function NavBar() {
                   <MDBIcon icon="user" id='login-icon' className='nav'/> 
                 </MDBDropdownToggle>
                 <MDBDropdownMenu className="dropdown-default">
-                <MDBDropdownItem><a href="/login" className='login-text'>Login</a></MDBDropdownItem>
-                <MDBDropdownItem><a href="/signup" className='login-text'>Sign Up</a></MDBDropdownItem>
+                  {loggedUser ? (
+                    <MDBDropdownItem><a href="/profile" className='login-texts'>{loggedUser.username}</a></MDBDropdownItem>
+                  ):(
+                    <>
+                      <MDBDropdownItem><a href="/login" className='login-text'>Login</a></MDBDropdownItem>
+                      <MDBDropdownItem><a href="/signup" className='login-text'>Sign Up</a></MDBDropdownItem>
+                      <MDBDropdownItem><a href="/logout" className='login-text'>Logout</a></MDBDropdownItem>
+                    </>
+                  )}                
                   {/* <MDBDropdownItem href="#!"className='login-text'>Admin Login</MDBDropdownItem> */}
                   {/* <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
                   <MDBDropdownItem href="#!">Something else here</MDBDropdownItem> */}

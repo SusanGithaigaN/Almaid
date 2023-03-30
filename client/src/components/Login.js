@@ -1,6 +1,7 @@
 import './Home.css'
 import React, {useState, useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
+import LoggedUser from './contexts/LoggedUser';
 
 import {
   MDBBtn,
@@ -14,8 +15,6 @@ import {
   MDBCheckbox
 }
 from 'mdb-react-ui-kit';
-
-import LoggedUser from './contexts/LoggedUser';
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -39,6 +38,7 @@ function Login() {
     .then((res) => res.json())
     .then((data) =>{
       console.log('Successfully Logged in', data);
+      // alert('Successfully Logged in')
       // set user state
       setUser(data.user);
       // redirect user to aboutus page if userlogin === success

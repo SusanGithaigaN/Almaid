@@ -6,10 +6,10 @@ class CleanersController < ApplicationController
     end
 
     # get cleaners and associated reviews
-    def summary
-        cleaners = Cleaner.includes(cleaner_reviews: :user)
-        render json: cleaners, each_serializer: CleanerSerializer
-    end
+    # def summary
+    #     cleaners = Cleaner.includes(cleaner_reviews: :user)
+    #     render json: cleaners, each_serializer: CleanerSerializer
+    # end
 
        
     private

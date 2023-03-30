@@ -7,10 +7,12 @@ import Footer from './Footer';
 import NavBar from './NavBar';
 import Home from './Home';
 import About from './About';
+import Staff from './Staff';
 import Login from './Login';
 import Signup from './Signup';
 // logged user
 import LoggedUser from './contexts/LoggedUser';
+import Booking from './Booking';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -22,6 +24,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route exact path='about' element={<About />} />
+        <Route exact path='staff' element={<Staff />} />
+        <Route exact path='booking' element={<Booking />} />
         <Route exact path='login' element={<Login />} />
         <Route exact path='signup' element={<Signup />} />
       </Routes>
