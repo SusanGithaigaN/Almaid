@@ -1,5 +1,4 @@
 # Almaid
-Tech stack: React, https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white
 
 Almaid is a React app built with a Ruby on Rails backend. It is designed to provide an efficient and reliable platform for people looking to hire household help.
 
