@@ -37,7 +37,7 @@ function Login() {
     })
     .then((res) => res.json())
     .then((data) =>{
-      console.log('Successfully Logged in', data);
+      // console.log('Successfully Logged in', data);
       // alert('Successfully Logged in')
       // set user state
       setUser(data.user);

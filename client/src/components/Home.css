@@ -112,7 +112,7 @@ font-family: 'Times New Roman', Times, serif;
 /* background-position: fixed !important;
 background-repeat: no-repeat;
 background-size: cover; */
-height: 220vh;
+height: 230vh;
 /* margin-top: 6em; */
 }
 .plantsy{
@@ -194,6 +194,36 @@ height: 100vh;
   margin-top: 5em;
   margin-bottom: 80em !important;
 }
+
+/* star rating
+.star-rating {
+  display: inline-block;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.star-rating span:before {
+  content: '\u2605';
+  margin-right: 0.5rem;
+  color: #ccc;
+}
+
+.star-rating .star-active {
+  color: gold;
+}
+
+.star-rating .star-good {
+  color: green;
+}
+
+.star-rating .star-ok {
+  color: orange;
+}
+
+.star-rating .star-bad {
+  color: red;
+} */
+
 
 /* footer */
 #footer{

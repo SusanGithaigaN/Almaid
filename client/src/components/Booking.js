@@ -3,7 +3,39 @@ import React, {useState} from 'react';
 import { MDBBtn, MDBCard, MDBCardBody, MDBCol, MDBIcon, MDBInput, MDBRow, MDBTypography } from 'mdb-react-ui-kit';
 
 export default function Booking() {
-  const [formData, setFormData] = useState({})
+  const [formData, setFormData] = useState({
+    // username
+    // username: '',
+
+    user_id: '',
+
+    // cleaner name: use select, option on form??
+    // name: '',
+    user_id: '',
+    cleaner_id: '',
+    start_date: '',
+    end_date: '',
+    payment_status: ''
+  });
+
+  const handleChange=(e)=>{
+    // const target=e.target
+    // const value=target.value
+    // const name= target.name
+
+
+    // convert date format into YYYY-MM-DD
+    const { name, value } =e.target;
+     let dateValue = value;
+     if ( name === 'start_date' || name === 'end-date'){
+      const date = new Date(value);
+      dateValue = date.toISOString().split('T')[0];
+     }
+    setFormData({
+      ...formData,
+      [name]: dateValue,
+    });
+  };
 
   const handleSubmit=(e)=>{
     // prevent form's default submission
@@ -12,31 +44,24 @@ export default function Booking() {
     fetch('/bookings',{
       method: 'POST',
       headers:{
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(formData)
+      body: JSON.stringify(formData),
     })
-    .then((res) =>{
-      if(res.ok){
+    // .then((res) =>{
+      // if(res.ok){
         // post data to backend
-        alert('Booking successfully submitted!')
-      }else{
+        // alert('Booking successfully submitted!')
+      // }else{
         // Errors
-        alert('error submitting booking')
-      }
-    })
-  }
+        // alert('error submitting booking')
+      // }
+    // })
+    .then((res) => res.json())
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err))
+  };
 
-  const handleChange=(e)=>{
-    const target=e.target
-    const value=target.value
-    const name= target.name
-
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }))
-  }
 
   return (
     <>
@@ -62,10 +87,10 @@ export default function Booking() {
                 <form className="mb-0" onSubmit={handleSubmit}>
                   <MDBRow className="mb-4">
                     <MDBCol>
-                      <MDBInput label='Your name' type='text' name='name' onChange={handleChange} />
+                      <MDBInput label='Your name' type='text' name='user_id' onChange={handleChange} />
                     </MDBCol>
                     <MDBCol>
-                      <MDBInput label='Cleaner name' type='text' name='cleaner' onChange={handleChange}/>
+                      <MDBInput label='Cleaner name' type='text' name='cleaner_id' onChange={handleChange}/>
                     </MDBCol>
                   </MDBRow>
                   <MDBRow className="mb-4">
@@ -80,10 +105,10 @@ export default function Booking() {
                     <MDBCol>
                       {/* <MDBInput label='Payment Status' type='text' name='payment' onChange={handleChange} /> */}
                       <MDBInput label='Payment Status' type='text' name='payment' onChange={handleChange}>
-                        <select>
+                        {/* <select>
                           <option>1</option>
                           <option>2</option>
-                        </select>
+                        </select> */}
                       </MDBInput>
                     </MDBCol>
                     {/* <MDBCol>

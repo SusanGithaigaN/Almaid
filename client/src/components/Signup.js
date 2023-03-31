@@ -20,7 +20,7 @@ function Signup() {
 
   const[formData, setFormData] = useState({
     name: '',
-    phone: '',
+    tel_no: '',
     email: '',
     password: '',
     username: ''
@@ -74,7 +74,7 @@ function Signup() {
               </MDBCol>
 
               <MDBCol col='6'>
-                <MDBInput wrapperClass='mb-4' label='Phone Number ' id='form1' name='phone' type='number' value={formData.phone} onChange={handleChange}/>
+                <MDBInput wrapperClass='mb-4' label='Phone Number ' id='form1' name='tel_no' type='text' value={formData.tel_no} onChange={handleChange}/>
               </MDBCol>
             </MDBRow>
 

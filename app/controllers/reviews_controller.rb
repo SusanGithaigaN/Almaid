@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
     protect_from_forgery with: :reset_session
+    # before_action :authorize
     def index
         reviews = Review.all
         render json: reviews
@@ -17,10 +18,27 @@ class ReviewsController < ApplicationController
           end      
     end
 
+    # delete reviews by id
+    def delete
+        review = find_by_id
+
+        if review
+            review.destroy
+            render json: { message: "Review successfully deleted" }, status: :ok
+        else
+            render json: { error: "Review not found" }, status: :not_found
+        end
+    end
+
     private
 
     def review_params
-        params.require(:review).permit(:review, :rating).merge(user_id: current_user.id)
+        params.permit(:rating, :review, :cleaner_id, :user_id)
     end
+
+    def find_by_id
+        Review.find_by(id: params[:id])
+    end
+
     
 end

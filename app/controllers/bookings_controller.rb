@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
     protect_from_forgery with: :reset_session
-
+    before_action :authorize
+    
     def create
         booking = Booking.new(booking_params)
 
@@ -10,6 +11,7 @@ class BookingsController < ApplicationController
             render json: { errors: "Validation errors"}, status: :unprocessable_entity
         end
     end
+
 
     private
 

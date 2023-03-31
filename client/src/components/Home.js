@@ -17,7 +17,7 @@ export default function Home() {
                 {/* <img src={Water} alt='Water' className='water' /> */}
               </div>
             </div>
-            <MDBBtn className='btn2' href='about'>View more</MDBBtn>
+            <MDBBtn className='btn' href='signup'>View more</MDBBtn>
         </div>
     </div>
   );

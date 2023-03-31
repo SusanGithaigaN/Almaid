@@ -1,4 +1,4 @@
 class ReviewSerializer < ActiveModel::Serializer
-  # attributes :user_id, :cleaner_id, :review
-  attributes :rating, :review
+  attributes :user_id, :cleaner_id, :rating, :review
+  # attributes :rating, :review
 end

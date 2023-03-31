@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # get '/users', to: 'users#index'
   # # create users
   # post '/users', to: 'users#create'
-  resources :users, only: [:index, :create]
+  resources :users, only: [:index, :create, :destroy]
 
   # show users
   get '/profile', to: 'users#show'
@@ -20,12 +20,15 @@ Rails.application.routes.draw do
   # create reviews
   # post '/reviews', to: 'reviews#create'
   post '/cleaners/:cleaner_id/reviews', to: 'reviews#create'
+   # delete reviews
+   delete '/reviews/:id', to: 'reviews#delete'
 
   # get all cleaners and associated reviews
   get '/cleaners/summary', to: 'cleaners#summary'
   
   # book cleaner
   post '/bookings', to: 'bookings#create'
+ 
   
   # login
   post '/login', to: 'session#create'
