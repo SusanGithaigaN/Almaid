@@ -15,6 +15,12 @@ Rails.application.routes.draw do
   # get all cleaners
   get '/cleaners', to: 'cleaners#index'
 
+  # add cleaners
+  post '/cleaners', to: 'cleaners#create'
+
+  # delete cleaners
+  delete '/cleaners/:id', to: 'cleaners#destroy'
+
   # get all reviews
   get '/reviews', to: 'reviews#index'
   # create reviews
@@ -28,12 +34,15 @@ Rails.application.routes.draw do
   
   # book cleaner
   post '/bookings', to: 'bookings#create'
- 
+  
+  # Admin
+  
   
   # login
   post '/login', to: 'session#create'
 
   # logout
   delete '/logout', to: 'session#destroy'
-  
+ 
+
 end

@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
     protect_from_forgery with: :reset_session
-    before_action :authorize
+    # before_action :authorize, only: [:create]
     
     def create
         booking = Booking.new(booking_params)

@@ -41,6 +41,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem 'bcrypt', '~> 3.1', '>= 3.1.18'
 gem 'executable-hooks', '~> 1.6', '>= 1.6.1'
 gem 'faker', '~> 3.1', '>= 3.1.1'
+gem 'rack-cors'
 
 # foreman
 gem 'foreman', '~> 0.87.2'

@@ -2,10 +2,8 @@ class Booking < ApplicationRecord
     belongs_to :user
     belongs_to :cleaner
 
-    
-
     # # validations
-    validates :payment_status, inclusion: { in: [ 'In progress','Pending','Complete' ] }
+    # validates :payment_status, inclusion: { in: [ 'In progress','Pending','Complete' ] }
     
     # validate booking period
     validate :validate_booking_period
