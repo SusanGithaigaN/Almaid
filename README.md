@@ -11,7 +11,7 @@ User signup:
 Login page:
 <img src ="./login.png">
 
-[Figma design link](https://www.figma.com/file/DidMNdENMiX3W1VXiFNNRN/Phase-4-project?node-id=0-1&t=wjQFciRpKjS6Nkks-0)
+Figma [design link](https://www.figma.com/file/DidMNdENMiX3W1VXiFNNRN/Phase-4-project?node-id=0-1&t=wjQFciRpKjS6Nkks-0)
 
 ## Setup Requirements
 * Ruby version : **2.7.4**
@@ -29,6 +29,10 @@ Login page:
         - foreman start -f Procfile.dev  
     * On the client directory, run the following command to install react-roter-dom
         - npm install react-router-dom@6
+    * For installation of React mui, run:
+        - npm install bootstrap-css-only
+        - npm i mdb-react-ui-kit
+
 ```
 
 ## Endpoints
