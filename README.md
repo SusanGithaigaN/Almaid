@@ -1,6 +1,16 @@
 # Almaid
 
-Almaid is a React app built with a Ruby on Rails backend. It is designed to provide an efficient and reliable platform for people looking to hire household help.
+# About the project
+Almaid is a React app built with a Ruby on Rails backend. It is designed to provide an efficient and reliable platform for people looking to hire household helps where they can make bookings and reviews. Also, people seeking cleaning jobs can also login to the site and upload their personal details to be reviewed/booked by potential clients.
+
+* The following image demonstrates the application functionality:
+Homepage:
+<img src ="./project.png">
+User signup:
+<img src ="./signup.png">
+Login page:
+<img src ="./login.png">
+
 [Figma design link](https://www.figma.com/file/DidMNdENMiX3W1VXiFNNRN/Phase-4-project?node-id=0-1&t=wjQFciRpKjS6Nkks-0)
 
 ## Setup Requirements

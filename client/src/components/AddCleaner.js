@@ -22,6 +22,7 @@ export default function AddCleaner() {
       .then((response) => response.json())
       .then((data) => console.log(data))
       .catch((error) => console.error(error));
+      alert("Cleaner added successfully!");
   };
 
   return (
@@ -45,6 +46,8 @@ export default function AddCleaner() {
           and start your journey to a fulfilling career with us!</p>
         </div>
       <form onSubmit={handleSubmit} className='add-form'>
+        <p style={{textAlign:'center', fontSize:'15px', backgroundColor:'yellow'}}>
+        Add your personal details here</p>
         <MDBInputGroup className='mb-3'>
           <span className='input-group-text'>Name</span>
           <input

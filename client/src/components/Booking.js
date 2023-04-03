@@ -21,6 +21,9 @@ export default function Booking() {
     });
     const data = await response.json();
     console.log(data);
+    if (response.ok) {
+      alert('Booking successfully made!');
+    }
   };
 
   const handleChange = (e) => {
