@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
     protect_from_forgery with: :reset_session
-    # before_action :authorize
+    before_action :authorize
 
     # skip signup authorization
-    # skip_before_action :authorize, only: [:create, :destroy]
+    skip_before_action :authorize, only: [:create, :destroy]
     def index
         users = User.all
         render json: users

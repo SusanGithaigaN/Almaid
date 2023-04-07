@@ -6,7 +6,7 @@ class Cleaner < ApplicationRecord
 
     # validations
     # # age
-    # validates :age, presence: true, length: { minimum:20 }
+    validates :age, numericality: { greater_than_or_equal_to: 18 }
     validates :id_no, presence: true, length: { minimum:10 }
     
 end

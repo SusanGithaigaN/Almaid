@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :admins
 
   # add cookies route
   get '/cookies', to: 'session#index'

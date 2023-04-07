@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
     protect_from_forgery with: :reset_session
-    # before_action :authorize
+    before_action :authorize
     def index
         reviews = Review.all
         render json: reviews
