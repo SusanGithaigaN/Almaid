@@ -1,33 +1,11 @@
-class SessionController < ApplicationController
+class SessionsController < ApplicationController
     protect_from_forgery with: :reset_session
     skip_before_action :authorize, only: [:create]
-
-    # # encode and decode JWT
-    # def encode_token(payload)
-    #     JWT::encode(payload, "secret")
-    # end
-
-    # # add a request item
-    # # check if the header is authorized
-    # def auth_header
-    #     request.header['Authorization']
-    # end
-    
-    # def decode_token
-    #     if auth_header
-    #         token = auth_header.split(' ')[1]
-    #         begin
-    #         JWT::decode(token, "secret")[0]
-    #         rescue JWT::DecodeError
-    #             nil
-    #         end
-    #     end
-    # end
 
     def index
         # set cookie
         cookies[:hello_world] ||= "Hello Susan"
-        session[:hello_world] ||= "Hello Wotld"
+        session[:hello_world] ||= "Hello World"
         render json: {cookies: cookies.to_hash}
     end
 
