@@ -1,19 +1,44 @@
 /* Home */
 .home{
   background-color: aliceblue;
-  padding-left: 3em;
+  /* padding-left: 3em; */
   height: 100vh;
+  padding-top: 4em;
+  overflow-x: hidden
+}
+#cardsz{
+  background-color: aliceblue;
+  border-style: none;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .para{
-  padding-top: 2em;
-  font-size: 4.5em;
+  /* padding-top: 4em; */
+  font-size: 4em;
   font-family: 'Abril Fatface', cursive;
   font-family: 'Outfit', sans-serif;
   font-weight: bold;
   color: #00008B !important;
   text-align: left;
-  padding-left: 4px;
+  padding-left: 1em;
 }
+#woman{
+  height: 700px;
+  width: 500px;
+  /* padding-left: 8em; */
+}
+#woman1{
+  width: 500px !important;
+  height: 550px;
+  padding-top: 8em;
+  /* padding-right: 1em; */
+}
+#plant{
+  height: 100px;
+}
+
 .flex-container {
   display: flex;
   align-items: flex-start;
@@ -23,64 +48,20 @@
   flex-direction: row-reverse;
 }
 
-.image1{
-  margin-left: 23em;
-  margin-top: 13em;
-  margin-right: 1em;
-}
-.image2 {
-  margin-left: 8em;
-  margin-top: 13em;
-}
-.image1, .image2 {
-  float: right;
-}
-
 .btn{
   background-color: #FFF000 !important;
   color: #000000 !important;
   /* padding-bottom: 3em; */
-  height: 57px;
+  /* height: 57px; */
   font-size: 16px !important;
   font-weight: bold !important;
+  /* padding-left: 3em; */
 } 
 .btn2, #btn2{
   /* height: fit-content; */
-  height: 45px;
+  /* height: 45px; */
   width: fit-content;
 }
-/* NavBar */
-.nav, .nav-link, .nav-main, .nav2{
-  padding-left: 3em !important;
-  padding-right: 3em !important;
-}
-.nav, .nav-link{
-  color: #00008B !important;
-  font-size: 26px;
-}
-.nav-main{
-  color: #00008B !important;
-  font-size: 35px !important;
-  font-weight: bold;
-}
-.nav2, .login-text{
-  color: #00008B !important;
-  font-size: 20px;
-}
-#login-icon{
-height: 57px !important;
-background-color: transparent !important;
-/* font-size: 14px !important; */
-}
-
-/* ........................................................................ */
-
-.login-texts{
-
-color: #00008B;
-}
-
-/* ........................................................................ */
 
 
 /* About */

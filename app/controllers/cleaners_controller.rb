@@ -1,7 +1,7 @@
 class CleanersController < ApplicationController
         protect_from_forgery with: :reset_session
-        # before_action :authorize, only: [:index, :create]
-        before_action :authorize
+        before_action :authorize, only: [:index, :create]
+        # before_action :authorize
         def index
             cleaners =Cleaner.all
             render json: cleaners, each_serializer: CleanerSerializer

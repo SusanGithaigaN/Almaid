@@ -1,0 +1,20 @@
+#about{
+    padding-top: 8em;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+#about-card{
+    box-shadow: none;
+    border-style: none;
+    /* background-color: aliceblue; */
+}
+
+#abt{
+    padding-top: 5em;
+    /* background-color: aliceblue; */
+}
+
+/* responsiveness */
+@media (max-width: 768px) {
+    
+}

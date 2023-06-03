@@ -20,18 +20,19 @@ import {
   MDBDropdownItem,
   MDBCollapse,
 } from 'mdb-react-ui-kit';
+import './NavBar.css'
 
 export default function NavBar() {
   const [showBasic, setShowBasic] = useState(false);
   const {loggedUser} = useContext(LoggedUser);
 
   return (
-    <MDBNavbar expand='lg' light bgColor='light'>
+    <MDBNavbar expand='lg' light bgColor='light' id='navbar'>
       <MDBContainer fluid>
         <MDBNavbarBrand as={Link} to='/' className='nav-main'>
         <img
               src='https://bit.ly/3nnsND0'
-              height='120'
+              height='60'
               alt=''
               loading='lazy'
             />
@@ -46,10 +47,15 @@ export default function NavBar() {
         >
           <MDBIcon icon='bars' fas />
         </MDBNavbarToggler>
-
+<div id='navigation'>
         <MDBCollapse navbar show={showBasic}>
           <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
-            <MDBNavbarItem>
+            {/* <MDBNavbarItem>
+            <MDBNavbarLink active aria-current='page' href='/' className='nav'>
+            <strong>ALMAID</strong>
+              </MDBNavbarLink>
+              </MDBNavbarItem> */}
+              <MDBNavbarItem>
               <MDBNavbarLink active aria-current='page' href='/' className='nav'>
                 Home
               </MDBNavbarLink>
@@ -94,6 +100,7 @@ export default function NavBar() {
             <MDBBtn color='primary'>Search</MDBBtn>
           </form> */}
         </MDBCollapse>
+        </div>
       </MDBContainer>
     </MDBNavbar>
   );
