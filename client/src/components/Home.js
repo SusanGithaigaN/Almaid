@@ -3,7 +3,7 @@ import './Home.css'
 
 import image1 from './images/image1.svg';
 import image2 from './images/image2.svg';
-import Water from './images/Water.svg';
+// import Water from './images/Water.svg';
 
 // export default function Home() {
 //   return (
@@ -25,13 +25,13 @@ import Water from './images/Water.svg';
 import React from 'react';
 import {
   MDBCard,
-  MDBCardTitle,
+  // MDBCardTitle,
   MDBCardText,
   MDBCardBody,
   MDBCardImage,
   MDBRow,
   MDBCol,
-  MDBBtn
+  // MDBBtn
 } from 'mdb-react-ui-kit';
 
 export default function Home() {

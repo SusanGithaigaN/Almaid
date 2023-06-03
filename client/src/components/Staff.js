@@ -19,7 +19,9 @@ import {
 //   MDBModalDialog,
 //   MDBModalContent,
   MDBModalHeader,
-  MDBModalTitle
+  MDBModalTitle,
+  MDBRow,
+  MDBCol
 //   MDBModalBody,
 //   MDBModalFooter
 } from 'mdb-react-ui-kit';
@@ -132,8 +134,10 @@ export default function Staff(){
             <h1>Our Staff</h1>
             {/* convert staff data into an array before mapping it's contents */}
             {Array.isArray(staffData) && staffData.map((staffMember) => (  
-                <MDBCard key={staffMember.id}  onClick={() => { setId(staffMember.id); setCleanerId(staffMember.id);  console.log('staffMember.id:', staffMember.id);}} style={{display: 'inline-block', marginLeft: '13em', justifyContent: 'center', flexDirection: 'column', alignContent: 'center'}} id='staff_details'> 
-                    <MDBCardImage position='top' alt={staffMember.name} src={staffMember.image_url} style={{width:  '50%', height: '50%', display: 'block', marginLeft: 'auto', marginRight: 'auto' }}/>
+              <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
+              <MDBCol>
+                <MDBCard className='h-100' key={staffMember.id}  onClick={() => { setId(staffMember.id); setCleanerId(staffMember.id);  console.log('staffMember.id:', staffMember.id);}} > 
+                    <MDBCardImage position='top' alt={staffMember.name} src={staffMember.image_url} height='20%' width='20%'/>
                         <MDBCardBody>
                             <MDBCardTitle>Names: {staffMember.name}</MDBCardTitle>
                             <MDBCardText>
@@ -162,6 +166,8 @@ export default function Staff(){
                             <MDBBtn href='/booking' style={{ width: 'fitContent', height: 'auto'}}>Book Cleaner</MDBBtn>
                         </MDBCardBody>
                 </MDBCard>  
+                </MDBCol>
+                </MDBRow>
             ))} 
         {/* Modal body text goes here */}
         <MDBModal

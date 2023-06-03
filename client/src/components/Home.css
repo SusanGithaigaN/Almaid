@@ -2,7 +2,7 @@
 .home{
   background-color: aliceblue;
   /* padding-left: 3em; */
-  height: 100vh;
+  height: fit-content;
   padding-top: 4em;
   overflow-x: hidden
 }
@@ -64,70 +64,29 @@
 }
 
 
-/* About */
-.details{
-background-color: white;
-height: 40vh;
-display: flex;
-justify-content: center;
-flex-direction: column;
-align-items: center;
-margin-left: 3em;
-margin-right: 3em;
-padding-bottom: 5em;
-}
-.details h1{
-/* align-items: center; */
-font-size: 48px;
-font-weight: bold;
-color: #00008B;
-padding-bottom: 1em;
-padding-top: 2em;
-}
-.details p{
-font-size: 25px;
-font-family: 'Times New Roman', Times, serif;
-/* align-items: center; */
-}
-#abt{
-/* background-position: fixed !important;
-background-repeat: no-repeat;
-background-size: cover; */
-height: 230vh;
-/* margin-top: 6em; */
-}
-.plantsy{
-/* margin-top: 6em; */
-float: left;
-margin-left: 3em;
-}
-.planty{
-margin-top: 3.8em;
-}
-.text{
-padding-top: 4em;
-/* float:right; */
-margin-left: 45em;
-/* background:lightgray; */
-width:50%;
-padding-right: 3em;
-/* padding-left: 3em; */
-height: 50vh;
-/* height:280px; */
-}
-.text h1{
-font-size: 48px;
-font-weight: bold;
-color: #00008B;
-/* align-items: center; */
-margin-left: 5em;
-}
+  /* !........................................................... */
+  @media (max-width: 768px) {
+    .para{
+      font-size: 40px;
+    }
+    #woman{
+      height: 500px;
+      width: 400px;
+      padding-left: 3em;
+    }
+    #woman1{
+      width: 200px !important;
+      height: 430px;
+      padding-left: 2em;
+      /* padding-top: 8em; */
+      /* padding-right: 1em; */
+    }
+  }
+  
 
-.text p{
-font-size: 25px;
-font-family: 'Times New Roman', Times, serif;
-/* color: #00008B; */
-}
+
+
+
 .body1, .body3{
 background-color: aliceblue;
 padding-bottom: 5em;
@@ -163,17 +122,17 @@ height: 100vh;
   color: #00008B;
   text-align: center;
   margin-top: 2.5em;
-  font-size: 60px;
+  font-size: 40px;
   margin-bottom: 1em;
   /* height: 50vh; */
 }
 #staff_details{
   /* height: 50vh; */
-  margin-bottom: 8em;
+  /* margin-bottom: 8em; */
 }
 #booking{
-  margin-top: 5em;
-  margin-bottom: 80em !important;
+  /* margin-top: 5em; */
+  /* margin-bottom: 80em !important; */
 }
 /* join us */
 .add-form{
@@ -204,3 +163,4 @@ height: 100vh;
   background-color: white !important;
   padding-top: 3em;
 }
+

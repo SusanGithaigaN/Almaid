@@ -1,80 +1,71 @@
-import './Home.css'
+
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
-
-import LoggedUser from './contexts/LoggedUser';
-
 import {
   MDBContainer,
   MDBNavbar,
   MDBNavbarBrand,
-  MDBNavbarToggler,
+  // MDBNavbar,
+  // MDBContainer,
   MDBIcon,
   MDBNavbarNav,
   MDBNavbarItem,
   MDBNavbarLink,
-//   MDBBtn,
-  MDBDropdown,
-  MDBDropdownToggle,
-  MDBDropdownMenu,
-  MDBDropdownItem,
+  MDBNavbarToggler,
   MDBCollapse,
+  MDBDropdown,
+  MDBDropdownMenu,
+  MDBDropdownToggle,
+  MDBDropdownItem,
 } from 'mdb-react-ui-kit';
-import './NavBar.css'
+import LoggedUser from './contexts/LoggedUser';
 
 export default function NavBar() {
-  const [showBasic, setShowBasic] = useState(false);
+  const [showNavCentred, setShowNavCentred] = useState(false);
   const {loggedUser} = useContext(LoggedUser);
 
   return (
-    <MDBNavbar expand='lg' light bgColor='light' id='navbar'>
+    <div id='navbar'>
+       <MDBNavbar expand='lg' light bgColor='light'>
       <MDBContainer fluid>
-        <MDBNavbarBrand as={Link} to='/' className='nav-main'>
-        <img
+          <MDBNavbarBrand href='/'>
+            <img
               src='https://bit.ly/3nnsND0'
               height='60'
               alt=''
               loading='lazy'
             />
-            <strong>ALMAID</strong>
-        </MDBNavbarBrand>
-
-        <MDBNavbarToggler
-          aria-controls='navbarSupportedContent'
+            ALMAID
+          </MDBNavbarBrand>
+          <MDBNavbarToggler
+          type='button'
+          data-target='#navbarCenteredExample'
+          aria-controls='navbarCenteredExample'
           aria-expanded='false'
           aria-label='Toggle navigation'
-          onClick={() => setShowBasic(!showBasic)}
+          onClick={() => setShowNavCentred(!showNavCentred)}
         >
           <MDBIcon icon='bars' fas />
         </MDBNavbarToggler>
-<div id='navigation'>
-        <MDBCollapse navbar show={showBasic}>
-          <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
-            {/* <MDBNavbarItem>
-            <MDBNavbarLink active aria-current='page' href='/' className='nav'>
-            <strong>ALMAID</strong>
-              </MDBNavbarLink>
-              </MDBNavbarItem> */}
-              <MDBNavbarItem>
-              <MDBNavbarLink active aria-current='page' href='/' className='nav'>
-                Home
+
+        <MDBCollapse navbar show={showNavCentred} center id='navbarCenteredExample'>
+          <MDBNavbarNav fullWidth={false} className='mb-2 mb-lg-0'>
+            <MDBNavbarItem>
+              <MDBNavbarLink active aria-current='page' href='about'>
+                About Us
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href='about' className='nav'>About Us</MDBNavbarLink>
+              <MDBNavbarLink active aria-current='page' href='staff'>Our Staff</MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink active aria-current='page' href='addcleaner'>Join Us</MDBNavbarLink>
             </MDBNavbarItem>
 
             <MDBNavbarItem>
-                  <MDBNavbarLink href='staff' className='nav'>Our Staff</MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-                  <MDBNavbarLink href='addcleaner' className='nav'>Join us</MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-            {/* <MDBNavItem> */}
               <MDBDropdown>
-                <MDBDropdownToggle nav caret>
-                  <MDBIcon icon="user" id='login-icon' className='nav'/> 
+                <MDBDropdownToggle tag='a' className='nav-link'>
+                Login
+                  {/* <MDBIcon icon="user" id='login-icon' className='nav'/>  */}
                 </MDBDropdownToggle>
                 <MDBDropdownMenu className="dropdown-default">
                   {loggedUser ? (
@@ -85,23 +76,15 @@ export default function NavBar() {
                       <MDBDropdownItem><a href="/signup" className='login-text'>Sign Up</a></MDBDropdownItem>
                       <MDBDropdownItem><a href="/logout" className='login-text'>Logout</a></MDBDropdownItem>
                     </>
-                  )}                
-                  {/* <MDBDropdownItem href="#!"className='login-text'>Admin Login</MDBDropdownItem> */}
-                  {/* <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
-                  <MDBDropdownItem href="#!">Something else here</MDBDropdownItem> */}
+                  )}   
                 </MDBDropdownMenu>
               </MDBDropdown>
-            {/* </MDBNavItem> */}
             </MDBNavbarItem>
+
           </MDBNavbarNav>
-{/* 
-          <form className='d-flex input-group w-auto'>
-            <input type='search' className='form-control' placeholder='Type query' aria-label='Search' />
-            <MDBBtn color='primary'>Search</MDBBtn>
-          </form> */}
         </MDBCollapse>
-        </div>
-      </MDBContainer>
-    </MDBNavbar>
+        </MDBContainer>
+      </MDBNavbar>
+    </div>
   );
 }
