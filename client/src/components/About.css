@@ -1,3 +1,7 @@
+#abt {
+  padding-left: 2%;
+  padding-right: 2%;
+}
 #about {
   padding-top: 3em;
   padding-left: 8%;
@@ -28,18 +32,15 @@
 #parag {
   font-size: 23px;
 }
-#abt {
-  /* padding-top: 5em; */
-  /* height: fit-content; */
-  /* background-color: aliceblue; */
-}
+
 #imd {
   width: auto;
   height: 300px;
 }
 #clean-title {
   font-weight: bold;
-  font-size: 28px
+  font-size: 28px;
+  color: #00008b;
 }
 
 /* responsiveness */

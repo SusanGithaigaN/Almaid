@@ -1,0 +1,17 @@
+.staff{
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+#staff-img{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#staff-btn{
+    background-color: #FFF000;
+    color: black;
+    font-weight: bold;
+}

@@ -1,8 +1,8 @@
 // import './Home.css'
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   MDBCard,
-//   MDBCardOverlay,
+  //   MDBCardOverlay,
   MDBCardImage,
   MDBCardBody,
   MDBCardTitle,
@@ -15,207 +15,208 @@ import {
   MDBModalContent,
   MDBModalDialog,
   MDBModal,
-//   MDBModal,
-//   MDBModalDialog,
-//   MDBModalContent,
+  //   MDBModal,
+  //   MDBModalDialog,
+  //   MDBModalContent,
   MDBModalHeader,
   MDBModalTitle,
   MDBRow,
   MDBCol
-//   MDBModalBody,
-//   MDBModalFooter
+  //   MDBModalBody,
+  //   MDBModalFooter
 } from 'mdb-react-ui-kit';
+import './Staff.css';
 
-export default function Staff(){
-    const [staffData , setStaffData]= useState([]);
-    // modal
-    const [reviewModal, setReviewModal] = useState(false);
-    // review
-    // set current user id
-    const [id, setId] = useState(null);
-    // add  a state variable to hold the cleaner's id
-    // const [cleanerId, setCleanerId] = useState(null);
-    const [cleanerId, setCleanerId] = useState(staffData.length > 0 ? staffData[0].id : null);
+export default function Staff() {
+  const [staffData, setStaffData] = useState([]);
+  // modal
+  const [reviewModal, setReviewModal] = useState(false);
+  // review
+  // set current user id
+  const [id, setId] = useState(null);
+  // add  a state variable to hold the cleaner's id
+  // const [cleanerId, setCleanerId] = useState(null);
+  const [cleanerId, setCleanerId] = useState(staffData.length > 0 ? staffData[0].id : null);
 
 
-    const [reviewInfo, setReviewInfo] = useState({
-        rating: 0,
-        review: "",
-        // cleaner_id: 0
-    });
+  const [reviewInfo, setReviewInfo] = useState({
+    rating: 0,
+    review: "",
+    // cleaner_id: 0
+  });
 
-    useEffect(() =>{
-        fetch('/cleaners/summary')
-        .then(response => response.json())
-        .then(data => setStaffData(data));
-    }, []);
+  useEffect(() => {
+    fetch('/cleaners/summary')
+      .then(response => response.json())
+      .then(data => setStaffData(data));
+  }, []);
 
-    // render stars
-    function renderStars(rating) {
-        const stars = [];
-      
-        for (let i = 0; i < 5; i++) {
-          if (i < rating) {
-            stars.push(<i key={i} className="fa fa-star"></i>);
-          } else {
-            stars.push(<i key={i} className="fa fa-star-o"></i>);
-          }
-        }
-      
-        return stars;
+  // render stars
+  function renderStars(rating) {
+    const stars = [];
+
+    for (let i = 0; i < 5; i++) {
+      if (i < rating) {
+        stars.push(<i key={i} className="fa fa-star"></i>);
+      } else {
+        stars.push(<i key={i} className="fa fa-star-o"></i>);
       }
+    }
 
-    // add review
-    // inputchange: handleChange
-      function handleChange(e){
-        const{ name, value } = e.target;
-        setReviewInfo((prevData) =>({
-            ...prevData,
-            [name]: value,
-        }));
-      }
+    return stars;
+  }
 
-
-    //   form submission:handleSubmit()
-    function handleSubmit(e){
-        // prevent form autosubmit
-        // rails backend url:localhost:3000/cleaners/:id/reviews
-        e.preventDefault();
-
-        if( cleanerId === null){
-            console.error("Cannot submit review: id is null");
-            return;
-        }
-
-        if( cleanerId === undefined){
-            console.error("Cannot submit review: id is undefined");
-            return;
-        }
-
-        // get the id of the staff member being viewed
-
-        const staffMemberId = cleanerId;
-        fetch(`/cleaners/${staffMemberId}/reviews`, {
-            method: 'POST',
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              ...reviewInfo,
-              cleaner_id: staffMemberId // set the staffMember.id before assigning it
-            }),
-          })
-            .then((res) => res.json())
-            .then((data) => {
-              setStaffData((prevData) => {
-                return prevData.map((staffMember) => {
-                  if (staffMember.id === data.cleaner_id) {
-                    return {
-                      ...staffMember,
-                      reviews: [...staffMember.reviews, data],
-                    };
-                  } else {
-                    return staffMember;
-                  }
-                });
-              });
-              setReviewModal(false);
-              setReviewInfo({
-                rating: 0,
-                review: "",
-              });
-            })
-            .catch((err) => console.error(err));
-        }
-
-    return(
-        <div className='staff'>
-            {/* <h1>Staff records go here</h1>         */}
-            <h1>Our Staff</h1>
-            {/* convert staff data into an array before mapping it's contents */}
-            {Array.isArray(staffData) && staffData.map((staffMember) => (  
-              <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
-              <MDBCol>
-                <MDBCard className='h-100' key={staffMember.id}  onClick={() => { setId(staffMember.id); setCleanerId(staffMember.id);  console.log('staffMember.id:', staffMember.id);}} > 
-                    <MDBCardImage position='top' alt={staffMember.name} src={staffMember.image_url} height='20%' width='20%'/>
-                        <MDBCardBody>
-                            <MDBCardTitle>Names: {staffMember.name}</MDBCardTitle>
-                            <MDBCardText>
-                            {/* {staffMember.bio} */}
-                            </MDBCardText>
-                        </MDBCardBody>
-                        <MDBListGroup flush>
-                            <MDBListGroupItem>Age: {staffMember.age}</MDBListGroupItem>
-                            <MDBListGroupItem>Phone Number:{staffMember.phonenumber}</MDBListGroupItem>
-                            <MDBListGroupItem>ID Number: {staffMember.id_no}</MDBListGroupItem>
-                            <MDBListGroupItem>Work experience: {staffMember.experience} year(s)</MDBListGroupItem>
-                            <MDBListGroupItem>
-                                Reviews: 
-                                {Array.isArray(staffMember.reviews) && staffMember.reviews.map((review) => (
-                                    <div key={review.id} className='star-rating'>
-                                        Rating: <span style={{ color: 'gold' }}>{renderStars(review.rating)}</span> <br /> Comment: {review.review}
-                                    </div>
-                                ))}
-                            </MDBListGroupItem>
-                            {/* <MDBListGroupItem>Reviews: {staffMember.reviews.rating}</MDBListGroupItem>
-                            <MDBListGroupItem>Reviews: {staffMember.reviews.review}</MDBListGroupItem> */}
-                        </MDBListGroup>
-                        <MDBCardBody>
-                            {/* <MDBCardLink href='/addreview'>Add Review</MDBCardLink> */}
-                            <MDBBtn disabled={staffMember === null} onClick={() => setReviewModal(true)} style={{backgroundColor: 'transparent', color:'lightblue', width: 'fitContent', height: 'auto'}}>Add Review</MDBBtn>
-                            <MDBBtn href='/booking' style={{ width: 'fitContent', height: 'auto'}}>Book Cleaner</MDBBtn>
-                        </MDBCardBody>
-                </MDBCard>  
-                </MDBCol>
-                </MDBRow>
-            ))} 
-        {/* Modal body text goes here */}
-        <MDBModal
-            tabIndex='-1'
-            show={reviewModal}
-            getOpenState={(e) => setReviewModal(e)}
-            centered
-        >
-            <MDBModalDialog>
-            <MDBModalContent>
-                <MDBModalHeader>
-                <MDBModalTitle>Add Review</MDBModalTitle>
-                <MDBBtn
-                    className='btn-close'
-                    color='none'
-                    onClick={() => setReviewModal(false)}
-                ></MDBBtn>
-                </MDBModalHeader>
+  // add review
+  // inputchange: handleChange
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setReviewInfo((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  }
 
 
-                <MDBModalBody>
-                <form onSubmit={handleSubmit} data-id={id}>
-                    <div className='form-group'>
-                    <label htmlFor='review-rating'>Rating:</label>
-                    <input
-                        type="number"
-                        className="form-control"
-                        id="rating"
-                        name="rating"
-                        value={reviewInfo.rating}
-                        onChange={handleChange}
-                        min="1"
-                        max="5"
-                        required
-                    />
+  //   form submission:handleSubmit()
+  function handleSubmit(e) {
+    // prevent form autosubmit
+    // rails backend url:localhost:3000/cleaners/:id/reviews
+    e.preventDefault();
+
+    if (cleanerId === null) {
+      console.error("Cannot submit review: id is null");
+      return;
+    }
+
+    if (cleanerId === undefined) {
+      console.error("Cannot submit review: id is undefined");
+      return;
+    }
+
+    // get the id of the staff member being viewed
+
+    const staffMemberId = cleanerId;
+    fetch(`/cleaners/${staffMemberId}/reviews`, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        ...reviewInfo,
+        cleaner_id: staffMemberId // set the staffMember.id before assigning it
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setStaffData((prevData) => {
+          return prevData.map((staffMember) => {
+            if (staffMember.id === data.cleaner_id) {
+              return {
+                ...staffMember,
+                reviews: [...staffMember.reviews, data],
+              };
+            } else {
+              return staffMember;
+            }
+          });
+        });
+        setReviewModal(false);
+        setReviewInfo({
+          rating: 0,
+          review: "",
+        });
+      })
+      .catch((err) => console.error(err));
+  }
+
+  return (
+    <div className='staff'>
+      {/* <h1>Staff records go here</h1>         */}
+      <h1>Our Staff</h1>
+      {/* convert staff data into an array before mapping it's contents */}
+      <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
+      {Array.isArray(staffData) && staffData.map((staffMember) => (
+          <MDBCol sm="6">
+            <MDBCard className='h-70' key={staffMember.id} onClick={() => { setId(staffMember.id); setCleanerId(staffMember.id); console.log('staffMember.id:', staffMember.id); }} >
+              <MDBCardImage id='staff-img' src={staffMember.image_url} position='top' alt={staffMember.name} />
+              <MDBCardBody>
+                <MDBCardTitle>Names: {staffMember.name}</MDBCardTitle>
+                <MDBCardText>
+                  {/* {staffMember.bio} */}
+                </MDBCardText>
+              </MDBCardBody>
+              <MDBListGroup flush>
+                <MDBListGroupItem>Age: {staffMember.age}</MDBListGroupItem>
+                <MDBListGroupItem>Phone Number:{staffMember.phonenumber}</MDBListGroupItem>
+                <MDBListGroupItem>ID Number: {staffMember.id_no}</MDBListGroupItem>
+                <MDBListGroupItem>Work experience: {staffMember.experience} year(s)</MDBListGroupItem>
+                <MDBListGroupItem>
+                  Reviews:
+                  {Array.isArray(staffMember.reviews) && staffMember.reviews.map((review) => (
+                    <div key={review.id} className='star-rating'>
+                      Rating: <span style={{ color: 'gold' }}>{renderStars(review.rating)}</span> <br /> Comment: {review.review}
                     </div>
-                    <div className='form-group'>
-                    <label htmlFor='review-comment'>Comment:</label>
-                    <textarea
-                        className="form-control"
-                        id="review"
-                        name="review"
-                        value={reviewInfo.review}
-                        onChange={handleChange}
-                        rows="3"
-                        required
-                    ></textarea>
-                    {/* <label htmlFor='review-comment'>Cleaner:</label>
+                  ))}
+                </MDBListGroupItem>
+                {/* <MDBListGroupItem>Reviews: {staffMember.reviews.rating}</MDBListGroupItem>
+                            <MDBListGroupItem>Reviews: {staffMember.reviews.review}</MDBListGroupItem> */}
+              </MDBListGroup>
+              <MDBCardBody>
+                {/* <MDBCardLink href='/addreview'>Add Review</MDBCardLink> */}
+                <MDBBtn id='staff-btn' disabled={staffMember === null} onClick={() => setReviewModal(true)} style={{ backgroundColor: 'transparent', marginRight: '2em' }}>Add Review</MDBBtn>
+                <MDBBtn id='staff-btn' href='/booking' style={{ width: 'fitContent', height: 'auto' }}>Book Cleaner</MDBBtn>
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+      ))}
+      </MDBRow>
+      {/* Modal body text goes here */}
+      <MDBModal
+        tabIndex='-1'
+        show={reviewModal}
+        getOpenState={(e) => setReviewModal(e)}
+        centered
+      >
+        <MDBModalDialog>
+          <MDBModalContent>
+            <MDBModalHeader>
+              <MDBModalTitle>Add Review</MDBModalTitle>
+              <MDBBtn id='staff-btn'
+                className='btn-close'
+                color='none'
+                onClick={() => setReviewModal(false)}
+              ></MDBBtn>
+            </MDBModalHeader>
+
+
+            <MDBModalBody>
+              <form onSubmit={handleSubmit} data-id={id}>
+                <div className='form-group'>
+                  <label htmlFor='review-rating'>Rating:</label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    id="rating"
+                    name="rating"
+                    value={reviewInfo.rating}
+                    onChange={handleChange}
+                    min="1"
+                    max="5"
+                    required
+                  />
+                </div>
+                <div className='form-group'>
+                  <label htmlFor='review-comment'>Comment:</label>
+                  <textarea
+                    className="form-control"
+                    id="review"
+                    name="review"
+                    value={reviewInfo.review}
+                    onChange={handleChange}
+                    rows="3"
+                    required
+                  ></textarea>
+                  {/* <label htmlFor='review-comment'>Cleaner:</label>
                     <select
                         className="form-control"
                         id="review"
@@ -228,23 +229,23 @@ export default function Staff(){
                         <option value="2">Cleaner 2</option>
                         <option value="3">Cleaner 3</option>
                     </select> */}
-                </div>  
+                </div>
                 <div className='modal-footer'>
-                  <MDBBtn color='secondary'>
+                  <MDBBtn id='staff-btn'>
                     Close
                   </MDBBtn>
-                  <MDBBtn type='submit'>
+                  <MDBBtn id='staff-btn' type='submit'>
                     Submit Review
                   </MDBBtn>
-                </div>                                                  
-                </form>
-                </MDBModalBody>
+                </div>
+              </form>
+            </MDBModalBody>
 
 
-            </MDBModalContent>
-            </MDBModalDialog>
-        </MDBModal>
-        
+          </MDBModalContent>
+        </MDBModalDialog>
+      </MDBModal>
+
     </div>
-    )
+  )
 }

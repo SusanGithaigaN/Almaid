@@ -75,7 +75,7 @@ export default function AddCleaner() {
           <input
             className='form-control'
             id='phonenumber'
-            type='number'
+            type='tel'
             value={phonenumber}
             onChange={(event) => setPhoneNumber(event.target.value)}
           />

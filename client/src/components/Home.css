@@ -16,28 +16,28 @@
 }
 .para{
   /* padding-top: 4em; */
-  font-size: 4em;
+  font-size: 3em;
   font-family: 'Abril Fatface', cursive;
   font-family: 'Outfit', sans-serif;
   font-weight: bold;
-  color: #00008B !important;
+  color: #00008B;
   text-align: left;
   padding-left: 1em;
 }
+#women{
+  padding-left: 6em;
+}
 #woman{
-  height: 700px;
-  width: 500px;
-  /* padding-left: 8em; */
+  height: 600px;
+  width: 400px;
+  padding-left: 2em;
 }
 #woman1{
-  width: 500px !important;
+  width: 400px !important;
   height: 550px;
   padding-top: 8em;
-  /* padding-right: 1em; */
 }
-#plant{
-  height: 100px;
-}
+
 
 .flex-container {
   display: flex;
@@ -47,39 +47,36 @@
   display: flex;
   flex-direction: row-reverse;
 }
-
-.btn{
-  background-color: #FFF000 !important;
-  color: #000000 !important;
-  /* padding-bottom: 3em; */
-  /* height: 57px; */
-  font-size: 16px !important;
-  font-weight: bold !important;
-  /* padding-left: 3em; */
-} 
-.btn2, #btn2{
-  /* height: fit-content; */
-  /* height: 45px; */
-  width: fit-content;
+#home-btn{
+  background-color: #FFF000;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000000;
+  margin-left: 5em;
 }
-
 
   /* !........................................................... */
   @media (max-width: 768px) {
     .para{
-      font-size: 40px;
+      font-size: 30px;
     }
     #woman{
-      height: 500px;
-      width: 400px;
-      padding-left: 3em;
+      height: 400px;
+      width: 300px;
+      /* padding-left: 3em; */
     }
     #woman1{
-      width: 200px !important;
+      width: 100px !important;
       height: 430px;
-      padding-left: 2em;
+      /* padding-left: 2em; */
       /* padding-top: 8em; */
       /* padding-right: 1em; */
+    }
+    #women{
+      padding-left: 1.5em;
+    }
+    #home-btn{
+      margin-left: 2em;
     }
   }
   

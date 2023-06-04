@@ -18,6 +18,7 @@ import {
   MDBDropdownItem,
 } from 'mdb-react-ui-kit';
 import LoggedUser from './contexts/LoggedUser';
+import './NavBar.css'
 
 export default function NavBar() {
   const [showNavCentred, setShowNavCentred] = useState(false);
@@ -27,7 +28,7 @@ export default function NavBar() {
     <div id='navbar'>
        <MDBNavbar expand='lg' light bgColor='light'>
       <MDBContainer fluid>
-          <MDBNavbarBrand href='/'>
+          <MDBNavbarBrand href='/' id='app-name'>
             <img
               src='https://bit.ly/3nnsND0'
               height='60'
@@ -49,21 +50,21 @@ export default function NavBar() {
 
         <MDBCollapse navbar show={showNavCentred} center id='navbarCenteredExample'>
           <MDBNavbarNav fullWidth={false} className='mb-2 mb-lg-0'>
-            <MDBNavbarItem>
-              <MDBNavbarLink active aria-current='page' href='about'>
+            <MDBNavbarItem className='nav-items'>
+              <MDBNavbarLink active aria-current='page' href='about' style={{color: '#00008B', marginRight: '3em'}}>
                 About Us
               </MDBNavbarLink>
             </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink active aria-current='page' href='staff'>Our Staff</MDBNavbarLink>
+            <MDBNavbarItem className='nav-items'>
+              <MDBNavbarLink active aria-current='page' href='staff'style={{color: '#00008B', marginRight: '3em'}}>Our Staff</MDBNavbarLink>
             </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink active aria-current='page' href='addcleaner'>Join Us</MDBNavbarLink>
+            <MDBNavbarItem className='nav-items'>
+              <MDBNavbarLink active aria-current='page' href='addcleaner'style={{color: '#00008B', marginRight: '3em'}}>Join Us</MDBNavbarLink>
             </MDBNavbarItem>
 
-            <MDBNavbarItem>
+            <MDBNavbarItem className='nav-items'>
               <MDBDropdown>
-                <MDBDropdownToggle tag='a' className='nav-link'>
+                <MDBDropdownToggle tag='a' className='nav-link'style={{color: '#00008B', marginRight: '3em'}}>
                 Login
                   {/* <MDBIcon icon="user" id='login-icon' className='nav'/>  */}
                 </MDBDropdownToggle>
