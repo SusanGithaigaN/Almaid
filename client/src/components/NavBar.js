@@ -72,11 +72,11 @@ export default function NavBar() {
                   {loggedUser ? (
                     <MDBDropdownItem><a href="/profile" className='login-texts'>{loggedUser.username}</a></MDBDropdownItem>
                   ):(
-                    <>
-                      <MDBDropdownItem><a href="/login" className='login-text'>Login</a></MDBDropdownItem>
-                      <MDBDropdownItem><a href="/signup" className='login-text'>Sign Up</a></MDBDropdownItem>
-                      <MDBDropdownItem><a href="/logout" className='login-text'>Logout</a></MDBDropdownItem>
-                    </>
+                    <div>
+                      <MDBDropdownItem id='drop-down'><a href="/login" className='login-text'  style={{color: '#00008B'}}>Login</a></MDBDropdownItem>
+                      <MDBDropdownItem id='drop-down'><a href="/signup" className='login-text' style={{color: '#00008B'}}>Sign Up</a></MDBDropdownItem>
+                      <MDBDropdownItem id='drop-down'><a href="/logout" className='login-text' style={{color: '#00008B'}}>Logout</a></MDBDropdownItem>
+                    </div>
                   )}   
                 </MDBDropdownMenu>
               </MDBDropdown>

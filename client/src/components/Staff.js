@@ -134,10 +134,10 @@ export default function Staff() {
       {/* <h1>Staff records go here</h1>         */}
       <h1>Our Staff</h1>
       {/* convert staff data into an array before mapping it's contents */}
-      <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
-      {Array.isArray(staffData) && staffData.map((staffMember) => (
-          <MDBCol sm="6">
-            <MDBCard className='h-70' key={staffMember.id} onClick={() => { setId(staffMember.id); setCleanerId(staffMember.id); console.log('staffMember.id:', staffMember.id); }} >
+      <MDBRow className='row-cols-1 row-cols-md-3 g-4' id='all-staff'>
+        {Array.isArray(staffData) && staffData.map((staffMember) => (
+          <MDBCol sm="6" id='my-col'>
+            <MDBCard className='h-100' key={staffMember.id} onClick={() => { setId(staffMember.id); setCleanerId(staffMember.id); console.log('staffMember.id:', staffMember.id); }}  id='staff-card'>
               <MDBCardImage id='staff-img' src={staffMember.image_url} position='top' alt={staffMember.name} />
               <MDBCardBody>
                 <MDBCardTitle>Names: {staffMember.name}</MDBCardTitle>
@@ -146,11 +146,11 @@ export default function Staff() {
                 </MDBCardText>
               </MDBCardBody>
               <MDBListGroup flush>
-                <MDBListGroupItem>Age: {staffMember.age}</MDBListGroupItem>
-                <MDBListGroupItem>Phone Number:{staffMember.phonenumber}</MDBListGroupItem>
-                <MDBListGroupItem>ID Number: {staffMember.id_no}</MDBListGroupItem>
-                <MDBListGroupItem>Work experience: {staffMember.experience} year(s)</MDBListGroupItem>
-                <MDBListGroupItem>
+                <MDBListGroupItem id='no-shadow'>Age: {staffMember.age}</MDBListGroupItem>
+                <MDBListGroupItem id='no-shadow'>Phone Number:{staffMember.phonenumber}</MDBListGroupItem>
+                <MDBListGroupItem id='no-shadow'>ID Number: {staffMember.id_no}</MDBListGroupItem>
+                <MDBListGroupItem id='no-shadow'>Work experience: {staffMember.experience} year(s)</MDBListGroupItem>
+                <MDBListGroupItem id='no-shadow'>
                   Reviews:
                   {Array.isArray(staffMember.reviews) && staffMember.reviews.map((review) => (
                     <div key={review.id} className='star-rating'>
@@ -163,12 +163,14 @@ export default function Staff() {
               </MDBListGroup>
               <MDBCardBody>
                 {/* <MDBCardLink href='/addreview'>Add Review</MDBCardLink> */}
-                <MDBBtn id='staff-btn' disabled={staffMember === null} onClick={() => setReviewModal(true)} style={{ backgroundColor: 'transparent', marginRight: '2em' }}>Add Review</MDBBtn>
-                <MDBBtn id='staff-btn' href='/booking' style={{ width: 'fitContent', height: 'auto' }}>Book Cleaner</MDBBtn>
+                <div id='staff-bt'>
+                  <MDBBtn id='bt-1' disabled={staffMember === null} onClick={() => setReviewModal(true)} style={{ backgroundColor: 'transparent', marginRight: '2em' }}>Add Review</MDBBtn>
+                  <MDBBtn id='bt-2' href='/booking' style={{ width: 'fitContent', height: 'auto' }}>Book Cleaner</MDBBtn>
+                </div>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
-      ))}
+        ))}
       </MDBRow>
       {/* Modal body text goes here */}
       <MDBModal

@@ -1,0 +1,59 @@
+/* join us */
+.add-form{
+    padding-top: 3em !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding-left: 6em !important;
+    padding-right: 6em !important;
+  }
+  
+  .MDBInput {
+    /* margin: 10px 0; */
+  }
+  
+  .join{
+    color: #00008B;
+    text-align: center;
+    margin-top: 2em;
+    font-size: 40px;
+    /* margin-bottom: 1em; */
+  }
+  .outro{
+    max-width: 100%;
+  }
+  .state{
+    font-size: 25px;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3em;
+    padding-top: 3em;
+    padding-left: 1em; 
+    padding-right: 1em;     
+  }
+  #join-almaid{
+
+  }
+  #sub-btn{
+    color: #000000;
+    border-style: none;
+    box-shadow: inset;
+    font-weight: bold;
+    background-color: #FFF000;
+  }
+  /* responsiveness */
+  @media only screen and (max-width: 600px) {
+    .add-form{
+        padding-left: 2em !important;
+        padding-right: 2em !important;
+      }
+      #sub-btn{
+        font-size: 12px;
+      }
+      .state{
+        font-size: 20px;
+      }
+  }

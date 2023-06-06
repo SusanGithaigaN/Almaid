@@ -1,4 +1,4 @@
-import './Home.css'
+import './Login.css';
 import React, {useState, useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
 import LoggedUser from './contexts/LoggedUser';
@@ -64,8 +64,8 @@ function Login() {
 
           <MDBRow className='g-0 d-flex align-items-center'>
 
-            <MDBCol md='4'>
-              <MDBCardImage src='https://bit.ly/40ntryU' alt='phone' className='rounded-t-5 rounded-tr-lg-0' fluid />
+            <MDBCol md='4' id='im_g'>
+              <MDBCardImage src='https://bit.ly/40ntryU' alt='phone' className='rounded-t-5 rounded-tr-lg-0' fluid id='login-img'/>
             </MDBCol>
 
             <MDBCol md='8'>
@@ -77,10 +77,12 @@ function Login() {
 
                 <div className="d-flex justify-content-between mx-4 mb-4">
                   <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
-                  <a href="/signup">Don't have an account? Click here to sign up</a>
+                  {/* <a href="/signup">Don't have an account? Click here to sign up</a> */}
                 </div>
-
-                <MDBBtn className="mb-4 w-100" type='submit' onClick={handleSubmit}>Sign in</MDBBtn>
+                <div className='extra'>
+                <a href="/signup">Don't have an account? Click here to sign up</a>
+                </div>
+                <MDBBtn className="mb-4 w-100" type='submit' onClick={handleSubmit} id='submit-btn'>Sign in</MDBBtn>
 
               </MDBCardBody>
 

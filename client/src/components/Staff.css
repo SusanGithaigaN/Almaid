@@ -4,8 +4,8 @@
 }
 
 #staff-img{
-    height: auto;
-    width: 100%;
+    /* height: ; */
+    width: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,3 +15,59 @@
     color: black;
     font-weight: bold;
 }
+/* Staff */
+.staff h1{
+    /* color: white; */
+    color: #00008B;
+    text-align: center;
+    margin-top: 2.5em;
+    font-size: 40px;
+    margin-bottom: 1em;
+    /* height: 50vh; */
+  }
+  #staff_details{
+    /* height: 50vh; */
+    /* margin-bottom: 8em; */
+  }
+  #staff-card{
+    /* width: fit-content; */
+    box-shadow: inset;
+  }
+  #my-col{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+  }
+  #staff-bt{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+  }
+  #bt-1{
+    background-color: transparent;
+  }
+  #bt-1, #bt-2{
+    color: #000000;
+    border-style: none;
+    box-shadow: inset;
+    font-weight: bold;
+  }
+  #bt-2{
+    background-color: #FFF000;
+  } 
+#no-shadow{
+    border-style: none;
+    box-shadow: none;
+}
+  /* responsiveness */
+  @media screen and (max-width: 768px) {
+    #bt-1, #bt-2{
+        font-size: 12px;
+    }
+    #staff-card{
+        width: fit-content;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+      }
+  }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { MDBInputGroup, MDBBtn } from 'mdb-react-ui-kit';
-import './Home.css'
+import './Join.css'
 export default function AddCleaner() {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
@@ -26,13 +26,10 @@ export default function AddCleaner() {
   };
 
   return (
-    <>
+    <div id='join-almaid'>
       <h1 className='join'>Join us</h1>
       <div className='outro' style={{backgroundColor:'aliceblue'}}>
-        <p className='state' style={{fontSize:'25px', color:'#000000', 
-        textAlign:'center', marginLeft:'3em',marginRight:'3em',
-        paddingBottom:'3em', paddingTop:'3em'
-          }}>
+        <p className='state'>
           Join our team of cleaning professionals and
           experience the satisfaction of transforming homes and offices
           into pristine spaces. As a member of our team, 
@@ -114,8 +111,8 @@ export default function AddCleaner() {
           />
         </MDBInputGroup>
 
-        <MDBBtn type='submit'>Submit</MDBBtn>
+        <MDBBtn type='submit' id='sub-btn'>Submit</MDBBtn>
       </form>
-    </>
+    </div>
   );
 }

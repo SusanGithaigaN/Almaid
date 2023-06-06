@@ -1,0 +1,19 @@
+#login-img{
+    width:120px;
+    height: auto;
+}
+#im_g{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.extra{
+    padding-bottom: 1em;
+}
+#submit-btn{
+    color: #000000;
+    border-style: none;
+    box-shadow: inset;
+    font-weight: bold;
+    background-color: #FFF000;
+}
