@@ -31,7 +31,7 @@ export default function Home() {
               {/* <MDBCardText>
               <small className='text-muted'>Last updated 3 mins ago</small>
             </MDBCardText> */}
-            <MDBBtn id='home-btn'>Button</MDBBtn>
+            <MDBBtn id='home-btn' href='about'>View More</MDBBtn>
             </MDBCardBody>
           </MDBCol>
           <MDBCol md='8' id='women' style={{ display: 'flex' }}>

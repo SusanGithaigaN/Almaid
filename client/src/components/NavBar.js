@@ -47,7 +47,7 @@ export default function NavBar() {
         >
           <MDBIcon icon='bars' fas />
         </MDBNavbarToggler>
-
+        {/* <div id='nav-titles'> */}
         <MDBCollapse navbar show={showNavCentred} center id='navbarCenteredExample'>
           <MDBNavbarNav fullWidth={false} className='mb-2 mb-lg-0'>
             <MDBNavbarItem className='nav-items'>
@@ -84,6 +84,7 @@ export default function NavBar() {
 
           </MDBNavbarNav>
         </MDBCollapse>
+        {/* </div> */}
         </MDBContainer>
       </MDBNavbar>
     </div>
