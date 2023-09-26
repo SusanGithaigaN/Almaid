@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :admins
 
   # add cookies route
-  get '/cookies', to: 'session#index'
+  get '/cookies', to: 'sessions#index'
 
   # # get all users
   # get '/users', to: 'users#index'
@@ -40,10 +40,10 @@ Rails.application.routes.draw do
   
   
   # login
-  post '/login', to: 'session#create'
+  post '/login', to: 'sessions#create'
 
   # logout
-  delete '/logout', to: 'session#destroy'
+  delete '/logout', to: 'sessions#destroy'
  
 
 end
